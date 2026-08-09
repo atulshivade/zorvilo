@@ -51,18 +51,29 @@
 
   function productCard(product) {
     var range = rangeById(product.range);
+    var soon = range.available === false;
     var button = document.createElement('button');
     button.type = 'button';
-    button.className = 'product product--' + product.fit + ' reveal';
+    button.className = 'product product--' + product.fit + ' reveal' + (soon ? ' product--soon' : '');
     button.dataset.range = product.range;
     button.dataset.id = product.id;
     button.style.setProperty('--accent', product.accent);
     button.style.setProperty('--tint', product.tint);
-    button.setAttribute('aria-label', 'View details for Zorvilo ' + product.name);
 
-    var badge = product.badge
-      ? '<span class="product__badge">' + product.badge + '</span>'
-      : '';
+    // Disabling keeps the tile in the grid (so the filters still count it)
+    // while taking it out of the tab order and killing the click.
+    if (soon) {
+      button.disabled = true;
+      button.setAttribute('aria-label', 'Zorvilo ' + product.name + ' — coming soon');
+    } else {
+      button.setAttribute('aria-label', 'View details for Zorvilo ' + product.name);
+    }
+
+    var badge = soon
+      ? '<span class="product__badge product__badge--soon">Coming soon</span>'
+      : product.badge
+        ? '<span class="product__badge">' + product.badge + '</span>'
+        : '';
 
     button.innerHTML =
       badge +

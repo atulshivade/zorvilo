@@ -19,7 +19,8 @@ website/            the site itself — this folder is what gets published
     main.js         nav, scroll reveal, catalogue rendering, filters, modal
   assets/img/       generated product imagery (do not edit by hand)
   tools/
-    prepare_assets.py   regenerates assets/img from the original photos
+    prepare_assets.py   regenerates product imagery from the original photos
+    prepare_logo.py     regenerates the logo and favicon from the logo PDF
 source-photos/      original product photography (input to the script above)
 ```
 
@@ -52,6 +53,15 @@ python tools/prepare_assets.py
 Note that the fruit-drink line-up uses crop windows measured off that specific
 photo; replacing it means re-measuring them (the script fails loudly if the
 source is no longer 1536 px wide).
+
+The logo is generated separately from `Zorvilo LOGO (PDF)TM.pdf`:
+
+```bash
+python tools/prepare_logo.py
+```
+
+That produces `logo.svg` (dark), `logo-white.svg` (for dark backgrounds), PNG
+copies for anywhere SVG will not do, and `favicon.png` cut from the leading "z".
 
 ## Publishing to Cloudflare Pages
 

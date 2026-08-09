@@ -6,6 +6,9 @@
  * fit: "cutout"  transparent PNG/WebP, floats on the tile tint
  *      "plate"   product on a white plate, sits on a white tile
  *      "photo"   photographic crop, fills the tile edge to edge
+ *
+ * available: false greys the whole range out and labels it "Coming soon".
+ * Flip it to true to put a range on sale — nothing else needs changing.
  */
 window.ZORVILO = window.ZORVILO || {};
 
@@ -14,6 +17,7 @@ window.ZORVILO.ranges = [
     id: 'energy',
     name: 'Zorvilo Energy',
     short: 'Energy',
+    available: true,
     accent: '#e4222a',
     tagline: 'The Standard of Strength',
     text: 'A classic energy drink built on taurine, caffeine and four B vitamins — engineered to push you beyond your limits.',
@@ -23,6 +27,7 @@ window.ZORVILO.ranges = [
     id: 'soft',
     name: 'Zorvilo Soft Drinks',
     short: 'Soft Drinks',
+    available: false,
     accent: '#d7262b',
     tagline: 'Everyday fizz, everywhere',
     text: 'Four carbonated classics in a 200 ml grab-and-go bottle, priced for the neighbourhood shop.',
@@ -32,6 +37,7 @@ window.ZORVILO.ranges = [
     id: 'fruit',
     name: 'Zorvilo Fruit Drinks',
     short: 'Fruit Drinks',
+    available: false,
     accent: '#f5a623',
     tagline: 'Playful fruit, 160 ml',
     text: 'Bright, sweet and made for lunchboxes — the small format that moves fastest at the counter.',
@@ -41,6 +47,7 @@ window.ZORVILO.ranges = [
     id: 'juice',
     name: 'Zorvilo Aloe Vera Juices',
     short: 'Aloe Vera Juices',
+    available: false,
     accent: '#3f8f5b',
     tagline: 'Aloe vera, pulp and juice',
     text: 'Seven aloe vera blends with visible pulp — the wellness end of the portfolio, built for modern trade.',
@@ -50,6 +57,7 @@ window.ZORVILO.ranges = [
     id: 'beer',
     name: 'Zorvilo 0.0 Brews',
     short: '0.0% Brews',
+    available: false,
     accent: '#16233f',
     tagline: 'All of the ritual, none of the alcohol',
     text: 'Alcohol-free beers and malty drinks at 0.0% ABV, brewed for the moments where a soft drink will not do.',

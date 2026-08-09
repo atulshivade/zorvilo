@@ -205,27 +205,27 @@ h3 { font-size: clamp(1.25rem, 2.4vw, 1.75rem); }
   gap: 2rem;
 }
 
+/* The supplied artwork is a single-colour wordmark, so both colourways ship as
+   separate SVGs and the header swaps them as its background flips from the dark
+   hero to the white stuck bar. */
 .wordmark {
   display: inline-flex;
   align-items: center;
-  gap: 0.3rem;
-  font-family: var(--font-display);
-  font-size: 1.6rem;
-  letter-spacing: 0.01em;
-  text-transform: lowercase;
-  transform: skewX(-9deg);
-  white-space: nowrap;
+  line-height: 0;
 }
 
-.wordmark span { color: var(--red); }
-.header.is-stuck .wordmark span { color: var(--red); }
-
-.wordmark__star {
-  width: 0.62em;
-  height: 0.62em;
-  transform: translateY(-0.32em) skewX(9deg);
-  fill: var(--red);
+.wordmark__img {
+  display: block;
+  height: 26px;
+  width: auto;
 }
+
+.wordmark__img--dark { display: none; }
+
+.header.is-stuck .wordmark__img--light { display: none; }
+.header.is-stuck .wordmark__img--dark { display: block; }
+
+.footer .wordmark__img { height: 30px; }
 
 .nav {
   margin-left: auto;
@@ -589,6 +589,28 @@ h3 { font-size: clamp(1.25rem, 2.4vw, 1.75rem); }
 
 .range:hover { transform: translateY(-6px); box-shadow: var(--shadow-lg); }
 
+/* Ranges that have not launched: greyed and inert, still shown so the client
+   can see the full portfolio. */
+.range--soon { cursor: default; filter: grayscale(1); }
+.range--soon:hover { transform: none; box-shadow: none; }
+.range--soon .range__media { opacity: 0.5; }
+.range--soon:hover .range__media img { transform: none; }
+
+.range__soon {
+  position: absolute;
+  top: 1.25rem;
+  right: 1.25rem;
+  z-index: 2;
+  padding: 0.35rem 0.7rem;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.92);
+  color: var(--ink);
+  font-size: 0.5625rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
 /* The shot is positioned rather than sized in flow: a percentage max-height
    will not resolve against an auto grid row, which lets the image overrun the
    card. Insets give the image box a definite size, and object-fit does the
@@ -722,6 +744,20 @@ h3 { font-size: clamp(1.25rem, 2.4vw, 1.75rem); }
   border-color: transparent;
 }
 
+/* Ranges that are not on sale yet: desaturated and inert, but still legible
+   enough to show the client what is coming. */
+.product--soon {
+  cursor: default;
+  background: var(--sand);
+}
+
+.product--soon:hover { transform: none; box-shadow: none; border-color: var(--line); }
+.product--soon .product__media { filter: grayscale(1); opacity: 0.55; }
+.product--soon .product__media img { transform: none; }
+.product--soon .product__range { color: var(--text-muted); }
+.product--soon .product__name,
+.product--soon .product__size { opacity: 0.6; }
+
 .product__media {
   position: relative;
   aspect-ratio: 62 / 100;
@@ -798,6 +834,12 @@ h3 { font-size: clamp(1.25rem, 2.4vw, 1.75rem); }
   font-weight: 800;
   letter-spacing: 0.14em;
   text-transform: uppercase;
+}
+
+.product__badge--soon {
+  background: #fff;
+  color: var(--text-muted);
+  border: 1px solid var(--line);
 }
 
 .product[hidden] { display: none; }
