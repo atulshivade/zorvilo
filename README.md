@@ -53,6 +53,30 @@ Note that the fruit-drink line-up uses crop windows measured off that specific
 photo; replacing it means re-measuring them (the script fails loudly if the
 source is no longer 1536 px wide).
 
+## Publishing to Cloudflare Pages
+
+The site is plain static files, so Cloudflare needs no build step. `wrangler.toml`
+already declares `website/` as the output directory.
+
+Connect the repository once in the Cloudflare dashboard — **Workers & Pages →
+Create → Pages → Connect to Git** — and pick this repo. If the settings are not
+picked up from `wrangler.toml`, set them by hand:
+
+| Setting | Value |
+| --- | --- |
+| Framework preset | None |
+| Build command | *(leave empty)* |
+| Build output directory | `website` |
+
+After that, every push to `main` publishes automatically.
+
+To deploy straight from this machine instead:
+
+```bash
+npx wrangler login          # one-time, opens a browser
+npx wrangler pages deploy website --project-name=zorvilo
+```
+
 ## Publishing the draft for client review
 
 The site deploys to GitHub Pages automatically via

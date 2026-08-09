@@ -1,0 +1,6 @@
+# Cloudflare Pages project config.
+# The site is plain static files, so there is no build step — Cloudflare just
+# uploads the contents of website/ as-is.
+name = "zorvilo"
+pages_build_output_dir = "website"
+compatibility_date = "2026-08-09"

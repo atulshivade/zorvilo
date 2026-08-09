@@ -1,4 +1,4 @@
-/* Zorvilo — site behaviour.
+﻿/* Zorvilo — site behaviour.
  * Plain script, no build step, so the pages open straight off disk for review.
  */
 (function () {
@@ -233,13 +233,13 @@
       var body = [];
       values.forEach(function (value, key) { body.push(key + ': ' + value); });
 
-      window.location.href = 'mailto:info@zorvilo.com' +
+      window.location.href = 'mailto:zorvilo3@gmail.com' +
         '?subject=' + encodeURIComponent('Zorvilo enquiry — ' + (values.get('enquiry') || 'General')) +
         '&body=' + encodeURIComponent(body.join('\n'));
 
       if (status) {
         status.hidden = false;
-        status.textContent = 'Opening your email app with this enquiry. If nothing happens, write to info@zorvilo.com.';
+        status.textContent = 'Opening your email app with this enquiry. If nothing happens, write to zorvilo3@gmail.com.';
       }
 
       window.setTimeout(function () {
