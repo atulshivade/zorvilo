@@ -1,0 +1,12 @@
+# Local QA harness (Playwright screenshots) — not part of the site
+.preview/
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+
+# OS / editor cruft
+Thumbs.db
+desktop.ini
+.DS_Store

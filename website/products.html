@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Products — Zorvilo | 21 drinks across five ranges</title>
+<meta name="description" content="The full Zorvilo range: energy drinks, carbonated soft drinks, fruit drinks, aloe vera juices and 0.0% alcohol-free brews.">
+<meta name="theme-color" content="#0b0b0d">
+<link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+<header class="header">
+  <div class="header__inner">
+    <a class="wordmark" href="index.html" aria-label="Zorvilo home">
+      zorvilo<svg class="wordmark__star" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 0l2.6 8.8L23 6.4l-6.2 5.6L23 17.6l-8.4-2.4L12 24l-2.6-8.8L1 17.6l6.2-5.6L1 6.4l8.4 2.4z"/></svg>
+    </a>
+    <nav class="nav" aria-label="Main">
+      <a class="nav__link" href="index.html">Home</a>
+      <a class="nav__link" href="products.html" aria-current="page">Products</a>
+      <a class="nav__link" href="energy.html">Energy</a>
+      <a class="nav__link" href="about.html">Our Story</a>
+      <a class="nav__link" href="contact.html">Contact</a>
+      <a class="btn btn--primary" href="contact.html#enquiry">Become a stockist</a>
+    </nav>
+    <button class="nav__toggle" type="button" aria-label="Menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<main id="main">
+
+  <section class="pagehead">
+    <div class="shell">
+      <div class="pagehead__inner">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <a href="index.html">Home</a><span aria-hidden="true">/</span><span>Products</span>
+        </nav>
+        <h1>The Range</h1>
+        <p class="lede" style="color:rgba(255,255,255,.66)">
+          Twenty-one drinks across five ranges. Select any product for formats, formulation
+          notes and serving detail.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="shell">
+      <div class="filters" data-filters role="group" aria-label="Filter products by range">
+        <button class="filter" type="button" data-filter="all" aria-pressed="true">All<span class="filter__count">21</span></button>
+        <button class="filter" type="button" data-filter="energy" aria-pressed="false">Energy<span class="filter__count">2</span></button>
+        <button class="filter" type="button" data-filter="soft" aria-pressed="false">Soft Drinks<span class="filter__count">4</span></button>
+        <button class="filter" type="button" data-filter="fruit" aria-pressed="false">Fruit Drinks<span class="filter__count">3</span></button>
+        <button class="filter" type="button" data-filter="juice" aria-pressed="false">Aloe Vera Juices<span class="filter__count">7</span></button>
+        <button class="filter" type="button" data-filter="beer" aria-pressed="false">0.0% Brews<span class="filter__count">5</span></button>
+      </div>
+
+      <div class="grid" data-product-grid></div>
+      <p class="empty" data-empty hidden>No products in this range yet.</p>
+    </div>
+  </section>
+
+  <section class="section section--dark section--tight">
+    <div class="shell">
+      <div class="split">
+        <div class="split__body">
+          <span class="eyebrow">Trade enquiries</span>
+          <h2>Want the<br>price list?</h2>
+        </div>
+        <div class="split__body">
+          <p class="lede">
+            Case configurations, MRP, shelf life and margin structures are shared on request with
+            distributors, modern trade buyers and export partners.
+          </p>
+          <div class="btn-row">
+            <a class="btn btn--primary" href="contact.html#enquiry">
+              Request the trade pack
+              <svg class="btn__arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M13.2 5.4 20 12l-6.8 6.6-1.4-1.4 4.2-4.2H4v-2h12l-4.2-4.2z"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<div class="modal" data-modal role="dialog" aria-modal="true" aria-labelledby="modal-title" aria-hidden="true">
+  <div class="modal__panel">
+    <button class="modal__close" type="button" aria-label="Close">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18.3 5.7 12 12l6.3 6.3-1.4 1.4L10.6 13.4 4.3 19.7 2.9 18.3 9.2 12 2.9 5.7l1.4-1.4 6.3 6.3 6.3-6.3z"/></svg>
+    </button>
+    <div class="modal__grid"></div>
+  </div>
+</div>
+
+<footer class="footer">
+  <div class="shell">
+    <div class="footer__grid">
+      <div class="footer__brand">
+        <a class="wordmark" href="index.html">zorvilo<svg class="wordmark__star" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 0l2.6 8.8L23 6.4l-6.2 5.6L23 17.6l-8.4-2.4L12 24l-2.6-8.8L1 17.6l6.2-5.6L1 6.4l8.4 2.4z"/></svg></a>
+        <p>A multi-category Indian beverage house. Energy drinks, soft drinks, fruit drinks,
+           aloe vera juices and 0.0% alcohol-free brews.</p>
+      </div>
+      <div>
+        <h4>Products</h4>
+        <ul>
+          <li><a href="products.html#energy">Energy</a></li>
+          <li><a href="products.html#soft">Soft Drinks</a></li>
+          <li><a href="products.html#fruit">Fruit Drinks</a></li>
+          <li><a href="products.html#juice">Aloe Vera Juices</a></li>
+          <li><a href="products.html#beer">0.0% Brews</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Company</h4>
+        <ul>
+          <li><a href="about.html">Our Story</a></li>
+          <li><a href="about.html#quality">Quality &amp; Compliance</a></li>
+          <li><a href="contact.html#enquiry">Become a Stockist</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Get in touch</h4>
+        <ul>
+          <li><a href="mailto:info@zorvilo.com">info@zorvilo.com</a></li>
+          <li><a href="https://www.zorvilo.com">www.zorvilo.com</a></li>
+          <li>Surajmal Beverages Pvt Ltd<br>Vyara, Gujarat 394650, India</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <span>© <span data-year>2026</span> Surajmal Beverages Pvt Ltd. Zorvilo™ is a trademark of Surajmal Beverages Pvt Ltd.</span>
+      <span class="footer__legal">
+        <span>High caffeine content — not recommended for children or pregnant women.</span>
+      </span>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/js/products.js"></script>
+<script src="assets/js/main.js"></script>
+</body>
+</html>

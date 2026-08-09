@@ -1,0 +1,4 @@
+# Draft site for client review — keep it out of search results.
+# Delete this file (or allow crawling) before the public launch.
+User-agent: *
+Disallow: /
