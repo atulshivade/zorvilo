@@ -100,8 +100,9 @@ If the repository is private, GitHub Pages is public only on paid plans; on a
 free account either make the repository public or share a local preview
 instead.
 
-`website/robots.txt` currently blocks search engines so the draft cannot be
-indexed while the client reviews it. **Delete that file before launch.**
+Search engines are now allowed in via `website/robots.txt`, which points at
+`website/sitemap.xml`. Add a page to the sitemap whenever you add one to the
+site — nothing generates it automatically.
 
 ## Custom domain: zorvilo.in
 
