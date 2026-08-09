@@ -102,3 +102,34 @@ instead.
 
 `website/robots.txt` currently blocks search engines so the draft cannot be
 indexed while the client reviews it. **Delete that file before launch.**
+
+## Custom domain: zorvilo.in
+
+`website/CNAME` holds the domain. It ships inside the published artifact because
+a GitHub Actions deploy replaces the whole site on every run — without the file
+in the build output, GitHub drops the custom domain and the site falls back to
+the `github.io` address.
+
+The domain is registered at GoDaddy, so the records go in **Domain Portfolio →
+zorvilo.in → DNS**. An apex domain cannot use a CNAME, hence the four A records;
+the IPv6 records are optional but let the site answer on networks without IPv4.
+
+| Type | Name | Value |
+| --- | --- | --- |
+| A | `@` | `185.199.108.153` |
+| A | `@` | `185.199.109.153` |
+| A | `@` | `185.199.110.153` |
+| A | `@` | `185.199.111.153` |
+| AAAA | `@` | `2606:50c0:8000::153` |
+| AAAA | `@` | `2606:50c0:8001::153` |
+| AAAA | `@` | `2606:50c0:8002::153` |
+| AAAA | `@` | `2606:50c0:8003::153` |
+| CNAME | `www` | `atulshivade.github.io.` |
+
+Delete GoDaddy's default parking records first (the `@` A record pointing at a
+GoDaddy IP and any `www` CNAME to `_domainconnect` or a parking host), otherwise
+they compete with the ones above.
+
+Then set **Settings → Pages → Custom domain** to `zorvilo.in`, wait for the DNS
+check to pass, and tick **Enforce HTTPS**. The certificate is issued by Let's
+Encrypt and can take up to an hour; until it exists, HTTPS will warn.
