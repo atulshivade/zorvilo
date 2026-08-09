@@ -244,13 +244,13 @@
       var body = [];
       values.forEach(function (value, key) { body.push(key + ': ' + value); });
 
-      window.location.href = 'mailto:zorvilo3@gmail.com' +
+      window.location.href = 'mailto:admin@zorvilo.in' +
         '?subject=' + encodeURIComponent('Zorvilo enquiry — ' + (values.get('enquiry') || 'General')) +
         '&body=' + encodeURIComponent(body.join('\n'));
 
       if (status) {
         status.hidden = false;
-        status.textContent = 'Opening your email app with this enquiry. If nothing happens, write to zorvilo3@gmail.com.';
+        status.textContent = 'Opening your email app with this enquiry. If nothing happens, write to admin@zorvilo.in.';
       }
 
       window.setTimeout(function () {
